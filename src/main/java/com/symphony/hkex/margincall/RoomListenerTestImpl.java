@@ -38,7 +38,7 @@ public class RoomListenerTestImpl implements RoomListener {
                     e.printStackTrace();
                 }
             } else if (inboundMessageText.contains("83074") && inboundMessageText.contains("C-")) {
-                callId = inboundMessageText.substring(inboundMessageText.indexOf("C-") + 2, inboundMessageText.indexOf("C-") + 5).trim();
+                callId = inboundMessageText.substring(inboundMessageText.indexOf("C-"), inboundMessageText.indexOf("C-") + 5).trim();
                 OutboundMessage messageOut = new OutboundMessage();
                 String messageOutText = "Hi HSBC, the payment is ready " + callId;
                 messageOut.setMessage(messageOutText);
@@ -48,7 +48,7 @@ public class RoomListenerTestImpl implements RoomListener {
                     e.printStackTrace();
                 }
             } else if (inboundMessageText.contains("00005") && inboundMessageText.contains("C-")) {
-                callId = inboundMessageText.substring(inboundMessageText.indexOf("C-") + 2, inboundMessageText.indexOf("C-") + 5).trim();
+                callId = inboundMessageText.substring(inboundMessageText.indexOf("C-"), inboundMessageText.indexOf("C-") + 5).trim();
                 OutboundMessage messageOut = new OutboundMessage();
                 String messageOutText = "Sorry we can't make it before due time " + callId;
                 messageOut.setMessage(messageOutText);
