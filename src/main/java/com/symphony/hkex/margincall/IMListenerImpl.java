@@ -22,9 +22,8 @@ public class IMListenerImpl implements IMListener {
 
         String inboundMessageText = inboundMessage.getMessageText();
 
-        LOGGER.info("Incoming IM Message:\n" + inboundMessage.getMessageText());
+        LOGGER.info("Incoming IM Message:\n" + inboundMessageText);
         if (inboundMessageText != null) {
-            LOGGER.info("Incoming IM Message:\n" + inboundMessageText);
             if (inboundMessageText.contains("HKKGI2")) {
                 OutboundMessage messageOut = new OutboundMessage();
                 String messageOutText = "fund is ready";
