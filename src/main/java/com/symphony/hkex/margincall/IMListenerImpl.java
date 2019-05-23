@@ -21,30 +21,34 @@ public class IMListenerImpl implements IMListener {
     public void onIMMessage(InboundMessage inboundMessage) {
 
         String inboundMessageText = inboundMessage.getMessageText();
+        String callId =  "";
 
         LOGGER.info("Incoming IM Message:\n" + inboundMessageText);
         if (inboundMessageText != null) {
-            if (inboundMessageText.contains("HKKGI2")) {
+            if (inboundMessageText.contains("D-")) {
+                callId = inboundMessageText.substring(inboundMessageText.indexOf("D-") + 2, inboundMessageText.indexOf("D-") + 5).trim();
                 OutboundMessage messageOut = new OutboundMessage();
-                String messageOutText = "fund is ready";
+                String messageOutText = "fund is ready " + callId;
                 messageOut.setMessage(messageOutText);
                 try {
                     this.botClient.getMessagesClient().sendMessage(inboundMessage.getStream().getStreamId(), messageOut);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            } else if (inboundMessageText.contains("82843")) {
+            } else if (inboundMessageText.contains("82843") && inboundMessageText.contains("C-")) {
+                callId = inboundMessageText.substring(inboundMessageText.indexOf("C-") + 2, inboundMessageText.indexOf("C-") + 5).trim();
                 OutboundMessage messageOut = new OutboundMessage();
-                String messageOutText = "fund is ready";
+                String messageOutText = "Hi HSBC, the payment is ready " + callId;
                 messageOut.setMessage(messageOutText);
                 try {
                     this.botClient.getMessagesClient().sendMessage(inboundMessage.getStream().getStreamId(), messageOut);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            } else if (inboundMessageText.contains("83155")) {
+            } else if (inboundMessageText.contains("83155") && inboundMessageText.contains("C-")) {
+                callId = inboundMessageText.substring(inboundMessageText.indexOf("C-") + 2, inboundMessageText.indexOf("C-") + 5).trim();
                 OutboundMessage messageOut = new OutboundMessage();
-                String messageOutText = "fund is not ready";
+                String messageOutText = "Sorry we can't make it before due time " + callId;
                 messageOut.setMessage(messageOutText);
                 try {
                     this.botClient.getMessagesClient().sendMessage(inboundMessage.getStream().getStreamId(), messageOut);
