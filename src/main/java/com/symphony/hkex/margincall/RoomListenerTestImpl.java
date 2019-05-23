@@ -23,12 +23,14 @@ public class RoomListenerTestImpl implements RoomListener {
 
     public void onRoomMessage(InboundMessage inboundMessage) {
         String inboundMessageText = inboundMessage.getMessageText();
+        String inboundMsg = inboundMessage.getMessage();
         String callId =  "";
 
         LOGGER.info("Incoming Room Message:\n" + inboundMessageText);
         if (inboundMessageText != null) {
             if (inboundMessageText.contains("D-")) {
-                callId = inboundMessageText.substring(inboundMessageText.indexOf("D-"), inboundMessageText.indexOf("D-") + 5).trim();
+                callId = inboundMsg.substring(inboundMsg.indexOf("D-"));
+                callId = callId.substring(0, callId.indexOf("</")).trim();
                 OutboundMessage messageOut = new OutboundMessage();
                 String messageOutText = "fund is ready " + callId;
                 messageOut.setMessage(messageOutText);
@@ -38,7 +40,8 @@ public class RoomListenerTestImpl implements RoomListener {
                     e.printStackTrace();
                 }
             } else if (inboundMessageText.contains("83074") && inboundMessageText.contains("C-")) {
-                callId = inboundMessageText.substring(inboundMessageText.indexOf("C-"), inboundMessageText.indexOf("C-") + 5).trim();
+                callId = inboundMsg.substring(inboundMsg.indexOf("C-"));
+                callId = callId.substring(0, callId.indexOf("</")).trim();
                 OutboundMessage messageOut = new OutboundMessage();
                 String messageOutText = "Hi HSBC, the payment is ready " + callId;
                 messageOut.setMessage(messageOutText);
@@ -48,7 +51,8 @@ public class RoomListenerTestImpl implements RoomListener {
                     e.printStackTrace();
                 }
             } else if (inboundMessageText.contains("00005") && inboundMessageText.contains("C-")) {
-                callId = inboundMessageText.substring(inboundMessageText.indexOf("C-"), inboundMessageText.indexOf("C-") + 5).trim();
+                callId = inboundMsg.substring(inboundMsg.indexOf("C-"));
+                callId = callId.substring(0, callId.indexOf("</")).trim();
                 OutboundMessage messageOut = new OutboundMessage();
                 String messageOutText = "Sorry we can't make it before due time " + callId;
                 messageOut.setMessage(messageOutText);
