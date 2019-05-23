@@ -26,7 +26,7 @@ public class IMListenerImpl implements IMListener {
         LOGGER.info("Incoming IM Message:\n" + inboundMessageText);
         if (inboundMessageText != null) {
             if (inboundMessageText.contains("D-")) {
-                callId = inboundMessageText.substring(inboundMessageText.indexOf("D-") + 2, inboundMessageText.indexOf("D-") + 5).trim();
+                callId = inboundMessageText.substring(inboundMessageText.indexOf("D-"), inboundMessageText.indexOf("D-") + 5).trim();
                 OutboundMessage messageOut = new OutboundMessage();
                 String messageOutText = "fund is ready " + callId;
                 messageOut.setMessage(messageOutText);
