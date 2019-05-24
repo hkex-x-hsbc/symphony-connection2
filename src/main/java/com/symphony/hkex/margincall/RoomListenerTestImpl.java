@@ -29,31 +29,97 @@ public class RoomListenerTestImpl implements RoomListener {
         if (inboundMessageText != null) {
             if (inboundMessageText.contains("D-")) {
                 callId = inboundMessageText.substring(inboundMessageText.indexOf("D-"), inboundMessageText.indexOf("D-") + 5).trim();
+
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
                 OutboundMessage messageOut = new OutboundMessage();
-                String messageOutText = "fund is ready " + callId;
+                String messageOutText = "Noted. Let's sort out the funding";
                 messageOut.setMessage(messageOutText);
                 try {
                     this.botClient.getMessagesClient().sendMessage(inboundMessage.getStream().getStreamId(), messageOut);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                try {
+                    Thread.sleep(60000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                OutboundMessage messageOut1 = new OutboundMessage();
+                String messageOutText1 = "fund is ready " + callId;
+                messageOut1.setMessage(messageOutText1);
+                try {
+                    this.botClient.getMessagesClient().sendMessage(inboundMessage.getStream().getStreamId(), messageOut1);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             } else if (inboundMessageText.contains("83074") && inboundMessageText.contains("C-")) {
                 callId = inboundMessageText.substring(inboundMessageText.indexOf("C-"), inboundMessageText.indexOf("C-") + 5).trim();
+
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
                 OutboundMessage messageOut = new OutboundMessage();
-                String messageOutText = "Hi HSBC, the payment is ready " + callId;
+                String messageOutText = "Noted. Let's sort out the funding";
                 messageOut.setMessage(messageOutText);
                 try {
                     this.botClient.getMessagesClient().sendMessage(inboundMessage.getStream().getStreamId(), messageOut);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+
+                try {
+                    Thread.sleep(60000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                OutboundMessage messageOut1 = new OutboundMessage();
+                String messageOutText1 = "Hi HSBC, the payment is ready " + callId;
+                messageOut1.setMessage(messageOutText1);
+                try {
+                    this.botClient.getMessagesClient().sendMessage(inboundMessage.getStream().getStreamId(), messageOut1);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             } else if (inboundMessageText.contains("00005") && inboundMessageText.contains("C-")) {
                 callId = inboundMessageText.substring(inboundMessageText.indexOf("C-"), inboundMessageText.indexOf("C-") + 5).trim();
+
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
                 OutboundMessage messageOut = new OutboundMessage();
-                String messageOutText = "Sorry we can't make it before due time " + callId;
+                String messageOutText = "Noted. Let's sort out the funding";
                 messageOut.setMessage(messageOutText);
                 try {
                     this.botClient.getMessagesClient().sendMessage(inboundMessage.getStream().getStreamId(), messageOut);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                try {
+                    Thread.sleep(60000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                OutboundMessage messageOut1 = new OutboundMessage();
+                String messageOutText1 = "Sorry we can't make it before due time " + callId;
+                messageOut1.setMessage(messageOutText1);
+                try {
+                    this.botClient.getMessagesClient().sendMessage(inboundMessage.getStream().getStreamId(), messageOut1);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
