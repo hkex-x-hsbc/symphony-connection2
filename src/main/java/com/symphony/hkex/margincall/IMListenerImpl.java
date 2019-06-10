@@ -48,7 +48,7 @@ public class IMListenerImpl implements IMListener {
             } else if (inboundMessageText.contains("00005") && inboundMessageText.contains("C-")) {
                 callId = inboundMessageText.substring(inboundMessageText.indexOf("C-"), inboundMessageText.indexOf("C-") + 5).trim();
                 OutboundMessage messageOut = new OutboundMessage();
-                String messageOutText = "Sorry we can't make it before due time " + callId;
+                String messageOutText = "Sorry for long waiting, Ok, fund is ready " + callId;
                 messageOut.setMessage(messageOutText);
                 try {
                     this.botClient.getMessagesClient().sendMessage(inboundMessage.getStream().getStreamId(), messageOut);
