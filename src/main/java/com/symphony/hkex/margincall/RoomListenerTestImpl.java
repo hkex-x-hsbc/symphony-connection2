@@ -48,7 +48,7 @@ public class RoomListenerTestImpl implements RoomListener {
                 }
 
                 try {
-                    Thread.sleep(30000);
+                    Thread.sleep(10000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -81,7 +81,7 @@ public class RoomListenerTestImpl implements RoomListener {
                 }
 
                 try {
-                    Thread.sleep(30000);
+                    Thread.sleep(10000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -115,13 +115,15 @@ public class RoomListenerTestImpl implements RoomListener {
                 }
 
                 try {
-                    Thread.sleep(30000);
+                    Thread.sleep(10000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
 
                 OutboundMessage messageOut1 = new OutboundMessage();
-                String messageOutText1 = "Sorry we can't make it before due time " + callId;
+//                String messageOutText1 = "Sorry we can't make it before due time " + callId;
+
+                String messageOutText1 = "Sorry for long waiting, Ok, fund is ready " + callId;
                 messageOut1.setMessage(messageOutText1);
                 try {
                     this.botClient.getMessagesClient().sendMessage(inboundMessage.getStream().getStreamId(), messageOut1);
