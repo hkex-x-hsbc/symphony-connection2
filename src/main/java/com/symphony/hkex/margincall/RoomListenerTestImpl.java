@@ -130,6 +130,16 @@ public class RoomListenerTestImpl implements RoomListener {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+            } else if (inboundMessageText.contains("#Clean")) {
+                String messageOutTextclean = " &#10;&#13; &#10;&#13; &#10;&#13; &#10;&#13; &#10;&#13; &#10;&#13; &#10;&#13; &#10;&#13; &#10;&#13; &#10;&#13; &#10;&#13; &#10;&#13; &#10;&#13; &#10;&#13; &#10;&#13; &#10;&#13; &#10;&#13; &#10;&#13; &#10;&#13; &#10;&#13; &#10;&#13; &#10;&#13; &#10;&#13; &#10;&#13; &#10;&#13; &#10;&#13; &#10;&#13; &#10;&#13; &#10;&#13; &#10;&#13; &#10;&#13; &#10;&#13; &#10;&#13; ";
+                OutboundMessage messageOut = new OutboundMessage();
+                messageOut.setMessage(messageOutTextclean);
+                try {
+                    this.botClient.getMessagesClient().sendMessage(inboundMessage.getStream().getStreamId(), messageOut);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
             }
         }
     }
