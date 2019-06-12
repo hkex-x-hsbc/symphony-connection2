@@ -131,7 +131,7 @@ public class RoomListenerTestImpl implements RoomListener {
                     e.printStackTrace();
                 }
             } else if (inboundMessageText.contains("#Clean")) {
-                String messageOutTextclean = "<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>";
+                String messageOutTextclean = "<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>";
                 OutboundMessage messageOut = new OutboundMessage();
                 messageOut.setMessage(messageOutTextclean);
                 try {
