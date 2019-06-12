@@ -81,7 +81,7 @@ public class RoomListenerTestImpl implements RoomListener {
                 }
 
                 try {
-                    Thread.sleep(10000);
+                    Thread.sleep(18000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -115,7 +115,7 @@ public class RoomListenerTestImpl implements RoomListener {
                 }
 
                 try {
-                    Thread.sleep(10000);
+                    Thread.sleep(15000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -130,7 +130,7 @@ public class RoomListenerTestImpl implements RoomListener {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            } else if (inboundMessageText.contains("#Clean")) {
+            } else if (inboundMessageText.contains("#clean")) {
                 String messageOutTextclean = "<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>";
                 OutboundMessage messageOut = new OutboundMessage();
                 messageOut.setMessage(messageOutTextclean);
