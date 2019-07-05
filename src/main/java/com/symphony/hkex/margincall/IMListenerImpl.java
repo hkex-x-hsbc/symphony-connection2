@@ -61,11 +61,71 @@ public class IMListenerImpl implements IMListener {
                 String outboundtext = "";
                 OutboundMessage messageTxt = new OutboundMessage();
                 if (inboundMessageText.contains("hot topics")){
-                    outboundtext="Topics";
+                    outboundtext="Hi dear,<br /> Here are the top 3 hot topics when you away<br /><br />" +
+                            "<table>" +
+                            "<tr>" +
+                            "<td><b>No.</b></td>" +
+                            "<td><b>Topic</b></td>" +
+                            "<td><b>Mail Number</b></td>" +
+                            "</tr>" +
+                            "<tr>" +
+                            "<td> 1 </td>" +
+                            "<td> Project X </td>" +
+                            "<td> 60 </td>" +
+                            "</tr>" +
+                            "<tr>" +
+                            "<td> 2 </td>" +
+                            "<td> Amy Schumer </td>" +
+                            "<td> 40 </td>" +
+                            "</tr>" +
+                            "<tr>" +
+                            "<td> 3 </td>" +
+                            "<td> Macys </td>" +
+                            "<td> 30 </td>" +
+                            "</tr>" +
+                            "</table>" +
+                            "<br/>" +
+                            "For more detail, can see in <u>dashboard</u>.<br/>";
                 }else if (inboundMessageText.contains("outstanding items")){
-                    outboundtext="o/s item";
-                }else if (inboundMessageText.contains("reminder")){
-                    outboundtext="reminder";
+                    outboundtext="Hi dear,<br /> Here are the 3 most urgent tasks from your mailbox<br /><br />" +
+                            "<table>" +
+                            "<tr>" +
+                            "<td><b>No.</b></td>" +
+                            "<td><b>Related Topic</b></td>" +
+                            "<td><b>From</b></td>" +
+                            "<td><b>Action</b></td>" +
+                            "<td><b>Due Time</b></td>" +
+                            "<td><b>Set Reminder</b></td>" +
+                            "</tr>" +
+                            "<tr>" +
+                            "<td> 1 </td>" +
+                            "<td> Project X </td>" +
+                            "<td> Steve </td>" +
+                            "<td> Confirm the budget </td>" +
+                            "<td> 2 hour left </td>" +
+                            "<td> 30 min before deadline </td>" +
+                            "</tr>" +
+                            "<tr>" +
+                            "<td> 2 </td>" +
+                            "<td> Project X </td>" +
+                            "<td> Tony </td>" +
+                            "<td> Arrange a meeting </td>" +
+                            "<td> 4 hour left </td>" +
+                            "<td> 1 hour before deadline </td>" +
+                            "</tr>" +
+                            "<tr>" +
+                            "<td> 3 </td>" +
+                            "<td> Project X </td>" +
+                            "<td> Peter </td>" +
+                            "<td> Dinner together </td>" +
+                            "<td> 8 hour left </td>" +
+                            "<td> 5 min before deadline </td>" +
+                            "</tr>" +
+                            "</table>" +
+                            "<br/>" +
+                            "For more detail, you can find in <u>dashboard</u>.<br/>";
+                }else if (inboundMessageText.contains("reminder")) {
+                    outboundtext = "No outstanding reminder, do you want me remind outstanding task?";
                 }
                 messageTxt.setMessage(outboundtext);
                 try {
