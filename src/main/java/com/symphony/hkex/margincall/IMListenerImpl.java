@@ -61,7 +61,7 @@ public class IMListenerImpl implements IMListener {
                 String outboundtext = "";
                 OutboundMessage messageTxt = new OutboundMessage();
                 if (inboundMessageText.contains("hot topics")){
-                    outboundtext= "Hi Dear, <br/> Here are the top 3 hot topics when you away<br /><br />" +
+                    outboundtext= "Hi Dear, <br/><br/> Here are the top 3 hot topics when you away<br /><br />" +
                             "                            <table>" +
                             "                            <tr>" +
                             "                            <td><b>No.</b></td>" +
@@ -87,7 +87,7 @@ public class IMListenerImpl implements IMListener {
                             "                            <br/>" +
                             "                            For more detail, can see in <b>Dashboard</b>.<br/>";
                 } else if (inboundMessageText.contains("outstanding items")){
-                    outboundtext="Hi dear,<br /> Here are the 3 most urgent tasks from your mailbox<br /><br />" +
+                    outboundtext="Hi Dear, <br/><br/> Here are the 3 most urgent tasks from your mailbox<br /><br />" +
                             "<table>" +
                             "<tr>" +
                             "<td><b>No.</b></td>" +
