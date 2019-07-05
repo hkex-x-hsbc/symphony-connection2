@@ -123,7 +123,7 @@ public class IMListenerImpl implements IMListener {
                             "</tr>" +
                             "</table>" +
                             "<br/>" +
-                            "For more detail, you can find in <a href=\"about:blank\">Dashboard</a>.<br/>";
+                            "For more detail, you can find in <b>Dashboard</b>.<br/>";
                 }else if (inboundMessageText.contains("reminder")) {
                     outboundtext = "No outstanding reminder, do you want me remind outstanding task?";
                 }
