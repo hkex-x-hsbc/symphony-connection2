@@ -85,7 +85,7 @@ public class IMListenerImpl implements IMListener {
                             "                            </tr>" +
                             "                            </table>" +
                             "                            <br/>" +
-                            "                            For more detail, can see in <a>Dashboard</a>.<br/>";
+                            "                            For more detail, can see in <b>Dashboard</b>.<br/>";
                 } else if (inboundMessageText.contains("outstanding items")){
                     outboundtext="Hi dear,<br /> Here are the 3 most urgent tasks from your mailbox<br /><br />" +
                             "<table>" +
