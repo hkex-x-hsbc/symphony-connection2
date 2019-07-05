@@ -56,6 +56,24 @@ public class IMListenerImpl implements IMListener {
                     e.printStackTrace();
                 }
             }
+
+            if (inboundMessageText.contains("Hi Ameli")) {
+                String outboundtext = "";
+                OutboundMessage messageTxt = new OutboundMessage();
+                if (inboundMessageText.contains("hot topics")){
+                    outboundtext="Topics";
+                }else if (inboundMessageText.contains("outstanding items")){
+                    outboundtext="o/s item";
+                }else if (inboundMessageText.contains("reminder")){
+                    outboundtext="reminder";
+                }
+                messageTxt.setMessage(outboundtext);
+                try {
+                    this.botClient.getMessagesClient().sendMessage(inboundMessage.getStream().getStreamId(), messageTxt);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
         }
 
     }
