@@ -61,31 +61,7 @@ public class IMListenerImpl implements IMListener {
                 String outboundtext = "";
                 OutboundMessage messageTxt = new OutboundMessage();
                 if (inboundMessageText.contains("hot topics")){
-                    outboundtext= "Hi Dear, <br/> Here are the top 3 hot topics when you away<br /><br />" +
-                            "                            <table>" +
-                            "                            <tr>" +
-                            "                            <td><b>No.</b></td>" +
-                            "                            <td><b>Topic</b></td>" +
-                            "                            <td><b>Email Number</b></td>" +
-                            "                            </tr>" +
-                            "                            <tr>" +
-                            "                            <td> 1 </td>" +
-                            "                            <td> Project X </td>" +
-                            "                            <td> 60 </td>" +
-                            "                            </tr>" +
-                            "                            <tr>" +
-                            "                            <td> 2 </td>" +
-                            "                            <td> Amy Schumer </td>" +
-                            "                            <td> 40 </td>" +
-                            "                            </tr>" +
-                            "                            <tr>" +
-                            "                            <td> 3 </td>" +
-                            "                            <td> Macys </td>" +
-                            "                            <td> 30 </td>" +
-                            "                            </tr>" +
-                            "                            </table>" +
-                            "                            <br/>" +
-                            "                            For more detail, can see in <a href=\"about:blank\">Dashboard</a>.<br/>";
+                    outboundtext= "Hi Dear, <br/> Here are the top 3 hot topics when you away<br /><br />";
                 } else if (inboundMessageText.contains("outstanding items")){
                     outboundtext="Hi dear,<br /> Here are the 3 most urgent tasks from your mailbox<br /><br />" +
                             "<table>" +
